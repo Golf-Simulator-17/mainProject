@@ -4,6 +4,7 @@
  *  Created on: Sep 14, 2023
  *      Author: pmclin
  */
+#include <stdint.h>
 
 #ifndef INC_IMU_H_
 #define INC_IMU_H_
@@ -45,11 +46,18 @@
 #define ACC_SAMPLE (1/66600)
 #define GYRO_SAMPLE (1/66600)
 
+//TIMEOUT
+#define TIMEOUT 10000
+
 //Functions
 void IMU_Init();
 void FIFO_Config();
 void READL_Data();
 void SENSOR_Config();
 void ReadAccelerometerAtRest();
-//void CALC_VELOCITY();
+void setup_flash();
+void flash_bsy_check();
+void erase_flash();
+void write_flash(uint16_t data, uint32_t addr);
+void clearFlash(uint8_t numberOfPages, uint8_t firstPageNumber);
 #endif /* INC_IMU_H_ */
