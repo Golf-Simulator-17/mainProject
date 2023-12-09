@@ -41,6 +41,7 @@
 //Sensitivity Values
 #define ACC_SENS 0.488
 #define GYRO_SENS 70
+#define THRESHOLD 10
 
 //RATES
 #define ACC_SAMPLE (1/66600)
